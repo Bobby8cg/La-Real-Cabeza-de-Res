@@ -1,0 +1,40 @@
+# La Real Cabeza de Res
+
+> Restaurante de comida tradicional sinaloense en Zapopan, Jalisco, México, especializado en tacos de cabeza de res. Lema: "El rey de la cabeza de res". By Vicentillo's.
+
+## Datos del restaurante
+- Dirección: Carlos Dickens 35, Jardines Vallarta, 45010 Zapopan, Jalisco, México
+- Horario: lunes a domingo, de 8:00 am a 12:00 am (medianoche)
+- Teléfono y WhatsApp: +52 33 2245 2528
+- Reservaciones en línea: https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI
+- Instagram: https://www.instagram.com/larealcabezaderesmx/
+- Calificación en Google: 4.5 de 5 con 438 opiniones (noviembre de 2026)
+- Rango de precio: $200–$300 MXN por persona (según Google)
+
+## Especialidad: tacos de cabeza (precios en MXN, IVA incluido)
+- Cabeza $39 · Cachete $39 · Carnaza $45 · Labio $45 · Sesos $49 · Ojo $49 · Quesitaco de cabeza $56 · Lengua $78
+- Otros tacos: Birria $48 · Chicharrón $60 · Quesabirria $59
+
+## Recomendados de la casa
+- La Real Suprema (lengua y cabeza con caldo especial de la casa) $235
+- Vampiro de cabeza: sin asiento $75, con asiento $90
+- Plato combinado (papa con chilorio, chorizo con papa y bistec a la mexicana; para 2 personas) $210
+- Lengua en salsa verde de la casa $249
+- Chilaquiles con birria (verdes o rojos) $185
+- Carne en su jugo $230
+
+## Más del menú
+- Caldos de cabeza (orden): Cabeza $169, Carnaza $179, La Real $235, Lengua $249
+- Menudo blanco o rojo, con o sin pata, con o sin grano: $180
+- Birria de res (orden): $199
+- Quesadillas desde $45 (maíz) / $49 (harina); vampiritos desde $75; enfrijoladas desde $155
+- Bebidas: aguas frescas, jugo de naranja, café de la olla, cerveza, micheladas, cantaritos y carajillos
+
+## Para llevar: línea artesanal Don Vicente
+- Machaca: 100 gr $95, 250 gr $220, 500 gr $430
+- Chorizo: 250 gr $55, 500 gr $95
+- Chilorio: 250 gr $85, 500 gr $160
+- Pedidos por WhatsApp: +52 33 2245 2528
+
+## Página principal
+- https://la-real-cabeza-de-res.vercel.app/ (menú completo, preguntas frecuentes, ubicación y reservaciones)

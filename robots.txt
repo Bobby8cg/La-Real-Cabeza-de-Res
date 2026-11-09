@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://la-real-cabeza-de-res.vercel.app/sitemap.xml
