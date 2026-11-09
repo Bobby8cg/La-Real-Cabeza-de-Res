@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Real Cabeza de Res · El Rey de la Cabeza de Res en Zapopan</title>
+<meta name="description" content="Comida tradicional sinaloense en Zapopan. Tacos de cabeza desde $39, caldos, vampiritos, birria y los antojos de Don Vicente. Abierto Lun–Dom 8:00 am a 12:00 am.">
+<meta name="theme-color" content="#275d38">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Identidad gráfica — tomada del menú */
+    --red:#cd483c;
+    --red-2:#b23b30;
+    --red-soft:#d25a4c;
+    --green:#275d38;
+    --green-2:#1e4a2c;
+    --green-3:#163822;
+    --green-ink:#10291a;
+    --cream:#e1d5be;
+    --cream-2:#ebe2d0;
+    --paper:#f4ede0;
+    --gold:#e8b44c;
+    --text:#1f2a22;
+    --text-soft:#5d5a4c;
+    --muted:#8d8672;
+    --wa:#1fa855;
+    --radius:18px;
+    --shadow:0 22px 50px -22px rgba(16,41,26,.55);
+    --display:"Bebas Neue", Impact, "Arial Narrow", sans-serif;
+    --block:"Archivo Black", "Arial Black", sans-serif;
+    --sans:"Manrope", system-ui, -apple-system, Segoe UI, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+  section{padding:clamp(72px,10vw,124px) 0}
+
+  .eyebrow{font-family:var(--display);font-size:1.15rem;letter-spacing:.12em;color:var(--red);display:inline-flex;align-items:center;gap:.5em}
+  .eyebrow::before,.eyebrow::after{content:"·"}
+  .on-dark .eyebrow{color:var(--gold)}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;letter-spacing:.01em}
+  h2{font-size:clamp(2.8rem,6vw,4.6rem);margin:.18em 0 .3em;color:var(--green)}
+  h2 .r{color:var(--red)}
+  .on-dark h2{color:var(--paper)}
+  .on-dark h2 .r{color:var(--gold)}
+  .lead{font-size:1.08rem;color:var(--text-soft);max-width:58ch}
+  .on-dark .lead{color:rgba(244,237,224,.78)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;font-weight:800;font-size:.98rem;padding:1em 1.6em;border-radius:999px;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;cursor:pointer;border:0;font-family:inherit;white-space:nowrap}
+  .btn:hover{transform:translateY(-2px)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 12px 28px -10px rgba(205,72,60,.75)}
+  .btn-red:hover{background:var(--red-2)}
+  .btn-cream{background:var(--paper);color:var(--green)}
+  .btn-cream:hover{background:#fff}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.16)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 28px -10px rgba(31,168,85,.6)}
+  .btn-wa:hover{background:#18914a}
+  .btn-outline{background:transparent;color:var(--green);border:2px solid var(--green)}
+  .btn-outline:hover{background:var(--green);color:var(--paper)}
+
+  /* Nav */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease, box-shadow .3s ease, padding .3s ease;padding:16px 0}
+  .nav.scrolled{background:rgba(22,56,34,.95);backdrop-filter:blur(12px);box-shadow:0 8px 30px -12px rgba(0,0,0,.5);padding:8px 0}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand img{height:58px;width:auto;transition:height .3s ease}
+  .nav.scrolled .brand img{height:48px}
+  .nav-links{display:flex;gap:26px;color:rgba(255,255,255,.88);font-family:var(--display);font-size:1.22rem;letter-spacing:.06em}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+  .nav-cta .btn{padding:.7em 1.2em;font-size:.88rem}
+  .nav-phone{color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
+  .nav-phone svg{width:18px;height:18px;color:var(--gold)}
+  @media (max-width:1040px){.nav-links,.nav-phone{display:none}}
+  .menu-btn{display:none;width:46px;height:46px;border-radius:12px;border:1.5px solid rgba(255,255,255,.4);background:rgba(16,41,26,.45);backdrop-filter:blur(6px);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .menu-btn span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease, opacity .2s ease}
+  .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{background:rgba(22,56,34,.98);border-top:1px solid rgba(255,255,255,.1);padding:8px 16px 20px;max-height:calc(100svh - 70px);overflow-y:auto}
+  .mobile-menu[hidden]{display:none}
+  .mobile-menu > a{display:block;padding:13px 4px;font-family:var(--display);font-size:1.6rem;letter-spacing:.05em;color:var(--paper);border-bottom:1px solid rgba(255,255,255,.08)}
+  .mobile-menu > a:hover{color:var(--gold)}
+  .mobile-menu-cta{display:grid;gap:10px;margin-top:16px}
+  .nav.menu-open{background:rgba(22,56,34,.98)}
+  @media (max-width:1040px){.menu-btn{display:flex}}
+  @media (min-width:1041px){.mobile-menu{display:none!important}}
+  @media (max-width:560px){.nav-cta .btn-red{display:none}.brand img{height:50px}}
+
+  /* Hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:150px 0 76px;overflow:hidden;isolation:isolate}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:slowzoom 18s ease-out forwards}
+  @keyframes slowzoom{to{transform:scale(1)}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+      linear-gradient(180deg,rgba(16,41,26,.6) 0%,rgba(16,41,26,.2) 35%,rgba(16,41,26,.88) 78%,var(--green-3) 100%),
+      radial-gradient(ellipse at 12% 85%,rgba(205,72,60,.4),transparent 60%)}
+  .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end}
+  .hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(16,41,26,.6);border:1px solid rgba(232,180,76,.5);padding:8px 16px 8px 10px;border-radius:999px;font-size:.82rem;font-weight:700;backdrop-filter:blur(6px)}
+  .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.22)}
+  .dot.closed{background:#f87171;box-shadow:0 0 0 4px rgba(248,113,113,.22)}
+  .hero h1{font-size:clamp(4rem,11vw,9rem);margin:20px 0 14px;line-height:.86}
+  .hero h1 .r{color:var(--red-soft);display:block}
+  .hero h1 .crown{display:inline-block;height:.55em;width:auto;vertical-align:.08em;margin-left:.12em}
+  .hero p.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);max-width:54ch;color:rgba(255,255,255,.88)}
+  .hero p.sub b{color:var(--gold)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .hero-card{background:rgba(16,41,26,.62);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:var(--radius);padding:22px 24px}
+  .hero-card .row{display:flex;gap:14px;align-items:flex-start;padding:12px 0}
+  .hero-card .row+.row{border-top:1px solid rgba(255,255,255,.1)}
+  .hero-card svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+  .hero-card b{display:block;font-family:var(--display);font-weight:400;font-size:1.05rem;letter-spacing:.1em;color:var(--gold);line-height:1.1}
+  .hero-card span{font-size:1rem;font-weight:600}
+  .price-pill{display:inline-flex;align-items:baseline;gap:6px;background:var(--red);color:#fff;border-radius:12px;padding:6px 12px;margin-top:4px}
+  .price-pill strong{font-family:var(--display);font-size:1.6rem;font-weight:400;line-height:1}
+  @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-card{display:none}}
+
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+  .promo-tag{background:var(--paper);color:var(--green);border-color:var(--paper);padding:8px 16px;font-weight:800}
+  .promo-tag:hover{background:#fff}
+
+  /* Promo aniversario — estilo del post fijo / foto de perfil */
+  .promo{background:var(--green);color:var(--paper);position:relative;overflow:hidden;isolation:isolate}
+  .promo::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background:
+     radial-gradient(ellipse 140px 220px at 8% 20%,#3a7a4c 98%,transparent 100%),
+     radial-gradient(ellipse 180px 120px at 30% 95%,#3a7a4c 98%,transparent 100%),
+     radial-gradient(ellipse 120px 200px at 88% 15%,#3a7a4c 98%,transparent 100%),
+     radial-gradient(ellipse 200px 140px at 72% 88%,#3a7a4c 98%,transparent 100%),
+     radial-gradient(ellipse 90px 140px at 52% 8%,#3a7a4c 98%,transparent 100%)}
+  .promo-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .promo-badge img{width:100%;max-width:440px;margin:0 auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+  .promo-kicker{font-family:var(--block);font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--paper)}
+  .promo h2{font-size:clamp(4rem,9vw,7.4rem);color:#f3e6c6;line-height:.85;margin:.12em 0 .25em}
+  .promo-pill{display:inline-block;background:#f3e6c6;color:var(--green);font-family:var(--display);font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;padding:.32em .6em .22em;border-radius:22px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);transform:rotate(-1.5deg)}
+  .promo-pill strong{font-weight:400;color:var(--red);font-size:1.25em}
+  .promo-when{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 28px;margin:28px 0 8px}
+  .promo-when small{display:block;font-family:var(--display);font-size:1rem;letter-spacing:.12em;color:var(--gold)}
+  .promo-when b{font-size:1.05rem}
+  .promo-left{font-weight:800;color:var(--gold);min-height:1.4em;margin-bottom:6px}
+  .promo-fine{margin-top:18px;font-size:.8rem;color:rgba(244,237,224,.7)}
+  @media (max-width:900px){.promo-grid{grid-template-columns:1fr;text-align:center}.promo-badge img{max-width:260px}.promo-when{justify-content:center}.promo .hero-actions{justify-content:center}}
+  @media (max-width:520px){.promo-when{grid-template-columns:1fr}}
+
+  /* Folk band (marquee) */
+  .strip{background:var(--red);color:var(--paper);padding:14px 0;overflow:hidden}
+  .strip-track{display:flex;gap:40px;width:max-content;animation:marquee 34s linear infinite;font-family:var(--display);font-size:1.6rem;letter-spacing:.08em}
+  .strip-track span{display:flex;align-items:center;gap:40px;white-space:nowrap}
+  .strip-track span::after{content:"";width:22px;height:14px;background:url(assets/crown-gold.png) center/contain no-repeat}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* About */
+  .about{background:var(--cream);position:relative;overflow:hidden}
+  .about::after{content:"";position:absolute;right:-120px;bottom:-60px;width:520px;height:290px;background:url(assets/bull-green.png) center/contain no-repeat;opacity:.08;pointer-events:none}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+  .about-media{position:relative}
+  .about-media .main{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--shadow);border:6px solid var(--paper)}
+  .about-media .inset{position:absolute;width:46%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:6px solid var(--paper);right:-24px;bottom:-36px;box-shadow:var(--shadow)}
+  .about-badge{position:absolute;top:22px;left:-22px;background:var(--red);color:var(--paper);border-radius:50%;width:128px;height:128px;display:grid;place-items:center;text-align:center;box-shadow:var(--shadow);transform:rotate(-8deg);border:3px dashed rgba(244,237,224,.55);outline:6px solid var(--red)}
+  .about-badge strong{font-family:var(--display);font-weight:400;font-size:2.4rem;display:block;line-height:.9}
+  .about-badge small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+  .about-text p+p{margin-top:1em}
+  .about-text p{color:var(--text-soft);font-size:1.04rem}
+  .about-text p.first{font-size:1.25rem;color:var(--green);font-weight:600;line-height:1.5}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+  .fact{background:var(--paper);border-radius:14px;padding:16px;text-align:center;border:1px solid rgba(39,93,56,.12)}
+  .fact strong{display:block;font-family:var(--display);font-weight:400;font-size:2.1rem;color:var(--red);line-height:1}
+  .fact small{font-size:.78rem;color:var(--text-soft);font-weight:600}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr}.about-media{margin:0 12px 40px}.about-media .inset{right:-10px}.about-badge{left:-8px;width:108px;height:108px}}
+
+  /* Tacos feature */
+  .tacos{background:var(--green-3);color:var(--paper);position:relative;overflow:hidden}
+  .tacos-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:48px}
+  .feature{display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;background:var(--green-2);border:1px solid rgba(232,180,76,.2)}
+  .feature-img{position:relative;min-height:480px}
+  .feature-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ribbon{position:absolute;top:22px;left:22px;background:var(--red);color:#fff;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;padding:6px 14px 4px;border-radius:999px;display:flex;gap:8px;align-items:center}
+  .ribbon img{height:14px}
+  .from{position:absolute;right:22px;bottom:22px;background:var(--paper);color:var(--green);border-radius:16px;padding:10px 16px;text-align:center;box-shadow:var(--shadow)}
+  .from small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+  .from strong{font-family:var(--display);font-weight:400;font-size:2.6rem;line-height:.9}
+  .feature-body{padding:clamp(28px,4vw,48px)}
+  .feature-body h3{font-size:clamp(2.4rem,4vw,3.4rem);color:var(--paper)}
+  .feature-body h3 span{color:var(--gold)}
+  .feature-body > p{color:rgba(244,237,224,.75);margin:10px 0 18px}
+
+  /* Price lists (shared) */
+  .plist{list-style:none}
+  .plist li{display:flex;align-items:baseline;gap:8px;padding:9px 0}
+  .plist .n{font-weight:700;font-size:1.02rem;color:var(--red)}
+  .plist .n small{display:block;font-weight:500;font-size:.82rem;color:var(--text-soft);margin-top:2px}
+  .plist .dots{flex:1;border-bottom:2px dotted rgba(31,42,34,.35);transform:translateY(-4px);min-width:16px}
+  .plist .p{font-family:var(--display);font-size:1.4rem;color:var(--text);line-height:1;white-space:nowrap}
+  .plist .p sup{font-size:.6em;vertical-align:.5em}
+  .rc{display:inline-block;width:20px;height:13px;background:url(assets/crown-green.png) center/contain no-repeat;margin-right:4px;vertical-align:-1px}
+  .on-dark .plist .n,.feature .plist .n{color:var(--red-soft)}
+  .feature .plist .n{color:#f08d80}
+  .feature .plist .dots{border-color:rgba(244,237,224,.3)}
+  .feature .plist .p{color:var(--paper)}
+  .feature .plist{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+  .feature-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  @media (max-width:900px){.feature{grid-template-columns:minmax(0,1fr)}.feature-img{min-height:320px}}
+  @media (max-width:480px){.feature .plist{grid-template-columns:1fr}}
+
+  /* Recomendados */
+  .recs{margin-top:28px;background:var(--red);border-radius:24px;padding:clamp(28px,4vw,46px);position:relative;color:var(--paper);overflow:hidden}
+  .recs::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(circle at 92% 10%,rgba(255,255,255,.08) 0 120px,transparent 121px),
+     radial-gradient(circle at 5% 100%,rgba(0,0,0,.08) 0 160px,transparent 161px);pointer-events:none}
+  .recs-head{display:flex;align-items:center;gap:18px;margin-bottom:22px;position:relative}
+  .recs-head .crown-box{background:var(--paper);border-radius:16px;padding:10px 14px;flex:none}
+  .recs-head .crown-box img{height:40px}
+  .recs-head h3{font-size:clamp(2.2rem,4vw,3rem);color:var(--paper)}
+  .recs-head p{color:rgba(244,237,224,.85);font-size:.95rem}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+  .rec{background:var(--paper);color:var(--text);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 30px -18px rgba(0,0,0,.5);transition:transform .3s ease, box-shadow .3s ease}
+  .rec:hover{transform:translateY(-4px);box-shadow:0 22px 40px -18px rgba(0,0,0,.55)}
+  .rec-img{position:relative;aspect-ratio:4/3;overflow:hidden;margin:0}
+  .rec-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .rec:hover .rec-img img{transform:scale(1.06)}
+  .rec-img .p{position:absolute;right:12px;bottom:12px;background:var(--red);color:#fff;font-family:var(--display);font-size:1.6rem;line-height:1;padding:6px 12px 4px;border-radius:12px;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+  .rec-body{padding:16px 18px 20px}
+  .rec-body b{font-family:var(--display);font-weight:400;font-size:1.65rem;line-height:1;color:var(--green);display:block;letter-spacing:.02em}
+  .rec-body small{color:var(--text-soft);font-size:.88rem;display:block;margin-top:6px;line-height:1.45}
+  .recs-note{position:relative;margin-top:14px;font-size:.78rem;color:rgba(244,237,224,.75);text-align:right}
+  @media (max-width:900px){.rec-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.rec-grid{grid-template-columns:1fr}}
+
+  /* Full menu */
+  .carta{background:var(--cream);position:relative}
+  .carta-frame{background:var(--paper);border:10px solid var(--red);border-radius:6px;padding:clamp(24px,4vw,56px);box-shadow:var(--shadow);position:relative}
+  .carta-top{text-align:center;margin-bottom:28px}
+  .carta-top img{height:96px;width:auto;margin:0 auto 8px}
+  .carta-top p{color:var(--text-soft);font-size:.92rem}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 14px;margin-bottom:22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;border-bottom:2px solid var(--cream)}
+  .tab{flex:none;font-family:var(--display);font-size:1.2rem;letter-spacing:.06em;padding:9px 16px 7px;border-radius:999px;border:2px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:.2s ease}
+  .tab:hover{background:rgba(39,93,56,.08)}
+  .tab[aria-selected="true"]{background:var(--green);color:var(--paper)}
+  .panel{display:none;animation:fade .35s ease}
+  .panel.active{display:grid;grid-template-columns:1fr 1fr;gap:10px 56px}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .group h4{font-family:var(--display);font-weight:400;font-size:1.9rem;color:var(--green);letter-spacing:.04em;display:flex;align-items:baseline;gap:.25em;margin-top:10px}
+  .group h4 small{font-size:1rem;color:var(--green);margin-left:auto}
+  .group h4::before{content:"· "}
+  .group .note{font-size:.84rem;color:var(--text-soft);margin-top:-2px}
+  .boxed{display:inline-block;font-family:var(--block);color:var(--red);border:2.5px solid var(--green);padding:6px 14px;font-size:1.05rem;letter-spacing:.02em;margin:12px 0 4px}
+  .dual{display:flex;gap:16px;align-items:baseline}
+  .dual em{font-style:normal;font-size:.62rem;color:var(--red);display:block;text-align:center;font-family:var(--sans);font-weight:700}
+  .carta-foot{margin-top:28px;padding-top:20px;border-top:2px solid var(--cream);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  .carta-foot p{font-size:.86rem;color:var(--text-soft)}
+  .legend{display:flex;align-items:center;gap:6px;font-size:.86rem;color:var(--green);font-weight:700}
+  @media (max-width:700px){.panel.active{grid-template-columns:1fr}}
+  @media (max-width:820px){.carta-frame{border-width:7px}}
+
+  /* Don Vicente artesanal */
+  .artesanal{background:var(--green);color:var(--paper);position:relative;overflow:hidden}
+  .artesanal::before{content:"";position:absolute;inset:0;background:url(assets/bull-cream.png) right -80px center/560px no-repeat;opacity:.06;pointer-events:none}
+  .art-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative}
+  .seal{width:150px;height:150px;border-radius:50%;background:var(--green-3);border:3px solid rgba(244,237,224,.25);display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:2.2rem;line-height:.9;color:var(--paper);margin-bottom:20px;box-shadow:var(--shadow)}
+  .seal small{display:block;font-size:.9rem;letter-spacing:.3em;color:var(--gold);margin-top:6px}
+  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .product{background:rgba(255,255,255,.07);border:1px solid rgba(244,237,224,.18);border-radius:18px;padding:22px}
+  .product h4{font-family:var(--display);font-weight:400;font-size:2.1rem;color:var(--gold);line-height:1;margin-bottom:10px}
+  .product .row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(244,237,224,.25);font-weight:700}
+  .product .row:last-child{border:0}
+  .product .row span:last-child{font-family:var(--display);font-weight:400;font-size:1.35rem}
+  @media (max-width:900px){.art-grid{grid-template-columns:1fr}}
+  @media (max-width:640px){.products{grid-template-columns:1fr}}
+
+  /* Why */
+  .why-head{text-align:center;max-width:680px;margin:0 auto 52px}
+  .why-head .lead{margin-inline:auto}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .why-card{background:#fff;border-radius:20px;padding:30px 24px;border:1px solid var(--cream);position:relative;transition:transform .3s ease,box-shadow .3s ease}
+  .why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .why-num{position:absolute;top:16px;right:22px;font-family:var(--display);font-size:3rem;color:var(--cream);line-height:1}
+  .why-icon{width:56px;height:56px;border-radius:16px;background:var(--red);color:#fff;display:grid;place-items:center;margin-bottom:20px}
+  .why-card:nth-child(even) .why-icon{background:var(--green)}
+  .why-icon svg{width:28px;height:28px}
+  .why-card h3{font-size:1.8rem;color:var(--green);margin-bottom:8px}
+  .why-card p{color:var(--text-soft);font-size:.95rem}
+  @media (max-width:980px){.why-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+  /* Gallery */
+  .gallery-sec{background:var(--cream)}
+  .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+  .g{border-radius:16px;overflow:hidden;position:relative;border:5px solid var(--paper)}
+  .g img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+  .g:hover img{transform:scale(1.06)}
+  .g figcaption{position:absolute;left:12px;bottom:12px;background:var(--red);color:#fff;font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;padding:4px 12px 2px;border-radius:999px;opacity:0;transform:translateY(6px);transition:.3s ease}
+  .g:hover figcaption{opacity:1;transform:none}
+  .g.tall{grid-row:span 2}
+  .g.wide{grid-column:span 2}
+  .ig-cta{display:flex;justify-content:center;margin-top:30px}
+  .ig-cta .btn{white-space:normal;text-align:center;max-width:100%}
+  @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.g figcaption{opacity:1;transform:none}}
+
+  /* Reviews */
+  .reviews{background:var(--green-3);color:var(--paper);position:relative;overflow:hidden}
+  .reviews-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:46px}
+  .score{display:flex;align-items:center;gap:16px;background:var(--green-2);border:1px solid rgba(232,180,76,.3);border-radius:16px;padding:14px 22px}
+  .score strong{font-family:var(--display);font-weight:400;font-size:3.2rem;color:#fff;line-height:1}
+  .score small{color:rgba(244,237,224,.7);font-size:.82rem}
+  .stars{display:flex;gap:2px;color:var(--gold)}
+  .stars svg{width:16px;height:16px}
+  .review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  a.score{transition:border-color .2s ease, transform .2s ease}
+  a.score:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .score-link{display:block;font-size:.8rem;font-weight:800;color:var(--gold);margin-top:2px}
+  .review-src{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:rgba(244,237,224,.7)}
+  .review-src svg{width:16px;height:16px;background:#fff;border-radius:50%;padding:2px}
+  .review-scores{font-size:.82rem;font-weight:700;color:var(--gold)}
+  .review:nth-child(4) .avatar{background:#e9806b;color:#fff}
+  .reviews-note{margin-top:26px;font-size:.82rem;color:rgba(244,237,224,.55);text-align:center}
+  .review{background:var(--green-2);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px}
+  .review blockquote{font-size:1.06rem;line-height:1.6;color:#fff}
+  .reviewer{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--red)}
+  .review:nth-child(2) .avatar{background:var(--gold);color:var(--green-3)}
+  .review:nth-child(3) .avatar{background:var(--paper);color:var(--green)}
+  .reviewer b{display:block;color:#fff;font-size:.95rem}
+  .reviewer small{color:rgba(244,237,224,.6);font-size:.8rem}
+  @media (max-width:640px){.review-grid{grid-template-columns:1fr}}
+
+  /* Visit */
+  .visit-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,64px);align-items:stretch}
+  .hours{margin:26px 0;background:#fff;border:1px solid var(--cream);border-radius:20px;padding:6px 24px}
+  .hours-row{display:flex;justify-content:space-between;align-items:center;padding:15px 0;gap:12px}
+  .hours-row+.hours-row{border-top:1px solid var(--cream)}
+  .hours-row span{color:var(--text-soft);font-weight:500}
+  .hours-row b{font-weight:800;color:var(--green);text-align:right}
+  .status{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.86rem;padding:6px 12px;border-radius:999px;background:rgba(74,222,128,.16);color:#15803d}
+  .status.closed{background:rgba(248,113,113,.14);color:#b91c1c}
+  .visit-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .map{border-radius:24px;overflow:hidden;min-height:440px;box-shadow:var(--shadow);border:6px solid var(--cream);position:relative;background:var(--cream)}
+  .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  @media (max-width:900px){.visit-grid{grid-template-columns:1fr}.map{min-height:340px}}
+
+  /* Reserve */
+  .reserve{position:relative;color:#fff;overflow:hidden;isolation:isolate}
+  .reserve-bg{position:absolute;inset:0;z-index:-2}
+  .reserve-bg img{width:100%;height:100%;object-fit:cover}
+  .reserve::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(22,56,34,.97) 0%,rgba(22,56,34,.9) 45%,rgba(178,59,48,.82) 100%)}
+  .reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .contact-list{margin-top:30px;display:grid;gap:12px}
+  .contact-item{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);transition:background .2s ease}
+  a.contact-item:hover{background:rgba(255,255,255,.13)}
+  .contact-item .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--paper);color:var(--green);flex:none}
+  .contact-item.wa .ic{background:var(--wa);color:#fff}
+  .contact-item.ig .ic{background:var(--red);color:#fff}
+  .contact-item .ic svg{width:22px;height:22px}
+  .contact-item small{display:block;font-family:var(--display);font-size:1rem;letter-spacing:.1em;color:var(--gold);line-height:1.1}
+  .contact-item b{font-size:1.05rem}
+  .form{background:var(--paper);color:var(--text);border-radius:24px;padding:clamp(26px,3.5vw,40px);box-shadow:0 30px 70px -20px rgba(0,0,0,.6);border-top:8px solid var(--red)}
+  .form h3{font-size:2.6rem;color:var(--green)}
+  .form > p{color:var(--text-soft);font-size:.94rem;margin-bottom:20px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+  .field input,.field select,.field textarea{font:inherit;font-size:1rem;padding:13px 14px;border-radius:12px;border:1.5px solid var(--cream);background:#fff;color:var(--text);transition:border-color .2s ease, box-shadow .2s ease;width:100%}
+  .field textarea{resize:vertical;min-height:80px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(205,72,60,.14)}
+  .form .btn{width:100%;margin-top:18px;padding:1.1em}
+  .btn-lg{margin-top:26px;padding:1.15em 1.9em;font-size:1.05rem}
+  .form-msg{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:.92rem;line-height:1.5}
+  .form-msg.ok{background:rgba(39,93,56,.1);color:var(--green);border:1px solid rgba(39,93,56,.25)}
+  .form-msg.error{background:rgba(205,72,60,.1);color:var(--red-2);border:1px solid rgba(205,72,60,.3)}
+  .form-msg a{font-weight:800;text-decoration:underline}
+  .form-note{text-align:center;font-size:.82rem;color:var(--muted);margin-top:12px}
+  @media (max-width:900px){.reserve-grid{grid-template-columns:1fr}}
+  @media (max-width:480px){.fields{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer{background:var(--green-ink);color:rgba(244,237,224,.65);padding:56px 0 110px;font-size:.9rem;border-top:8px solid var(--red)}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot img{height:84px;width:auto;margin-bottom:12px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--display);font-size:1.2rem;letter-spacing:.06em;color:var(--paper)}
+  .foot-links a:hover{color:var(--gold)}
+  .copy{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem}
+  .copy .king{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;color:var(--gold)}
+  @media (min-width:761px){footer{padding-bottom:56px}}
+
+  /* Floating WA + mobile bar */
+  .fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(31,168,85,.7);transition:transform .2s ease}
+  .fab:hover{transform:scale(1.08)}
+  .fab svg{width:32px;height:32px}
+  .fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.6);opacity:0}}
+  .mbar{display:none}
+  @media (max-width:760px){
+    .fab{display:none}
+    .mbar{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(16,41,26,.97);backdrop-filter:blur(10px);border-top:3px solid var(--red)}
+    .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 6px;border-radius:12px;font-weight:800;font-size:.86rem;color:#fff}
+    .mbar svg{width:18px;height:18px}
+    .mbar .call{background:rgba(255,255,255,.1)}
+    .mbar .wa{background:var(--wa)}
+    .mbar .res{background:var(--red)}
+  }
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== Responsive polish (tablet & mobile) ===== */
+  @media (max-width:900px){
+    /* Gallery: even 2-column grid, first photo full width — no empty cells */
+    .gallery{grid-auto-rows:190px}
+    .g.tall{grid-row:auto}
+    .g.wide{grid-column:auto}
+    .g:first-child{grid-column:1/-1}
+    .g figcaption{max-width:calc(100% - 20px);left:10px;bottom:10px;font-size:.95rem;line-height:1.1;padding:5px 10px 3px}
+  }
+  @media (max-width:760px){
+    /* Readable description text (16px) */
+    .why-card p,.rec-body small,.recs-head p,.form > p,.feature-body > p,.product .row span:first-child{font-size:1rem}
+    .plist .n small{font-size:.9rem}
+    .field label{font-size:.82rem}
+    .fact small{font-size:.85rem;line-height:1.3;display:block}
+    /* Comfortable tap targets */
+    .foot-links a{padding:8px 0}
+    .foot a[href^="tel"],.foot a[href*="wa.me"],.foot a[href*="instagram"]{display:inline-block;padding:8px 0}
+    .hours-row b a{display:inline-block;padding:8px 0}
+    .promo-tag{padding:11px 16px}
+    .mbar a{font-size:.92rem;min-height:48px}
+    .hero-card{display:none}
+    .hero{padding-bottom:104px}
+    .feature-body{min-width:0}
+  }
+  @media (max-width:560px){
+    section{padding:64px 0}
+    .hero{padding:120px 0 104px}
+    .hero h1{font-size:clamp(3.6rem,17vw,4.6rem)}
+    /* Hero buttons: primary full width, the other two share a row */
+    .hero .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .hero .hero-actions .btn{padding:1em .8em;width:100%}
+    .hero .hero-actions .btn:first-child{grid-column:1/-1}
+    /* Promo & artesanal buttons: full width, same size */
+    .promo .hero-actions,.artesanal .hero-actions{display:grid;gap:10px}
+    .promo .hero-actions .btn,.artesanal .hero-actions .btn{width:100%}
+    /* Taco card buttons on one row */
+    .feature-cta{display:grid;grid-template-columns:1fr auto;gap:10px}
+    .feature-cta .btn{padding:1em 1.1em}
+    .visit-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .visit-actions .btn{padding:1em .8em}
+    .btn-lg{width:100%}
+    .facts{gap:8px}
+    .fact{padding:14px 8px}
+    .carta-frame{padding:22px 16px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.640-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.870.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.290.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.81-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zm8.04-17.49A11.3 11.3 0 0 0 12.05.67C5.79.67.69 5.77.69 12.030c0 2 .52 3.96 1.52 5.68L.6 23.33l5.75-1.51a11.33 11.33 0 0 0 5.69 1.45h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.32-8.03z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="i-star-half" viewBox="0 0 24 24"><defs><clipPath id="half-clip"><rect x="0" y="0" width="12" height="24"/></clipPath></defs><path fill="currentColor" opacity=".3" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/><path fill="currentColor" clip-path="url(#half-clip)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.8 0-3.6-2.4-6-4-8.2-.4 2-1.4 3.2-2.6 3.8C12.8 7.5 11.5 4.6 9 2c0 4-4 6.6-4 11.2C5 19.3 8 22 12 22z"/><path d="M12 22c-1.7 0-3-1.3-3-3.2 0-2 1.6-3 3-4.8 1.4 1.8 3 2.8 3 4.8 0 1.9-1.3 3.2-3 3.2z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6 2.4-.5 4.9-2 5.9-4"/></symbol>
+  <symbol id="i-family" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="2.6"/><circle cx="16.5" cy="7.5" r="2.1"/><path d="M3.5 21v-5.5A4.5 4.5 0 0 1 8 11a4.5 4.5 0 0 1 4.5 4.5V21M13.5 21v-4a3 3 0 0 1 6 0v4"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 14H6z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="La Real Cabeza de Res — inicio"><img src="assets/logo-cream.png" alt="La Real Cabeza de Res by Vicentillo's" width="1092" height="323"></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#tacos">Tacos</a>
+      <a href="#carta">Menú</a>
+      <a href="#artesanal">Para llevar</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visitanos">Visítanos</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+523322452528"><svg><use href="#i-phone"/></svg>33 2245 2528</a>
+      <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer">Reservar mesa</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil" hidden>
+    <a href="#aniversario" data-promo>Aniversario</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#tacos">Tacos</a>
+    <a href="#carta">Menú</a>
+    <a href="#artesanal">Para llevar</a>
+    <a href="#galeria">Galería</a>
+    <a href="#opiniones">Opiniones</a>
+    <a href="#visitanos">Visítanos</a>
+    <div class="mobile-menu-cta">
+      <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer">Reservar mesa</a>
+      <a class="btn btn-ghost" href="tel:+523322452528"><svg><use href="#i-phone"/></svg>Llamar al 33 2245 2528</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=2000&q=80&auto=format&fit=crop" alt="Tacos de cabeza de res con cebolla y cilantro" fetchpriority="high"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-tags">
+        <span class="hero-tag"><span class="dot" id="heroDot"></span><span id="heroStatus">Abierto hoy · 8:00 am – 12:00 am</span></span>
+        <a class="hero-tag promo-tag" href="#aniversario" data-promo>🎉 Aniversario: tacos de cabeza a $20</a>
+      </div>
+      <h1>El rey de la<span class="r">cabeza de res</span></h1>
+      <p class="sub">Comida tradicional sinaloense en Zapopan. Tacos de cabeza desde <b>$39</b>, caldos, vampiritos, birria y los antojos de Don Vicente — del desayuno a la medianoche, todos los días.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer"><svg><use href="#i-cal"/></svg>Reserva tu mesa</a>
+        <a class="btn btn-wa" href="https://wa.me/523322452528?text=Hola%2C%20quiero%20hacer%20un%20pedido%20o%20reservar%20en%20La%20Real%20Cabeza%20de%20Res" target="_blank" rel="noopener noreferrer"><svg><use href="#i-wa"/></svg>Pide por WhatsApp</a>
+        <a class="btn btn-ghost" href="#carta">Ver menú</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Datos rápidos">
+      <div class="row"><svg><use href="#i-fire"/></svg><div><b>Tacos de cabeza</b><span class="price-pill"><small>desde</small><strong>$39</strong></span></div></div>
+      <div class="row"><svg><use href="#i-clock"/></svg><div><b>Horario</b><span>Lun – Dom · 8:00 am a 12:00 am</span></div></div>
+      <div class="row"><svg><use href="#i-pin"/></svg><div><b>Ubicación</b><span>Carlos Dickens 35, Jardines Vallarta, Zapopan</span></div></div>
+      <div class="row"><svg><use href="#i-phone"/></svg><div><b>Reservaciones</b><span><a href="tel:+523322452528">+52 33 2245 2528</a></span></div></div>
+    </aside>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Tacos de cabeza</span><span>La Real Suprema</span><span>Vampiritos</span><span>Birria de res</span><span>Menudo blanco y rojo</span><span>Los antojos de Don Vicente</span><span>Comida tradicional sinaloense</span>
+    <span>Tacos de cabeza</span><span>La Real Suprema</span><span>Vampiritos</span><span>Birria de res</span><span>Menudo blanco y rojo</span><span>Los antojos de Don Vicente</span><span>Comida tradicional sinaloense</span>
+  </div>
+</div>
+
+<!-- PROMO ANIVERSARIO (se oculta sola después del 30 nov 2026) -->
+<section class="promo" id="aniversario" data-start="2026-11-03" data-end="2026-11-30">
+  <div class="wrap promo-grid">
+    <div class="promo-badge reveal"><img src="assets/cow-badge.png" alt="La Real Cabeza de Res by Vicentillo's" width="900" height="1013" loading="lazy"></div>
+    <div class="promo-body reveal">
+      <span class="promo-kicker">¡Ven a celebrar con nosotros!</span>
+      <h2>Estamos de aniversario</h2>
+      <div class="promo-pill">Tacos de cabeza a <strong>$20</strong></div>
+      <div class="promo-when">
+        <div><small>Días</small><b>Lunes a viernes</b></div>
+        <div><small>Horario</small><b>6:00 pm a 12:00 am</b></div>
+        <div><small>Vigencia</small><b>3 al 30 de noviembre</b></div>
+      </div>
+      <p class="promo-left" id="promoLeft"></p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer"><svg><use href="#i-cal"/></svg>Aparta tu mesa</a>
+        <a class="btn btn-cream" href="https://www.google.com/maps/search/?api=1&query=La%20Real%20Cabeza%20de%20Res%2C%20Carlos%20Dickens%2035%2C%20Jardines%20Vallarta%2C%20Zapopan" target="_blank" rel="noopener noreferrer"><svg><use href="#i-pin"/></svg>Carlos Dickens 35</a>
+      </div>
+      <p class="promo-fine">Vigencia: del 3 al 30 de noviembre de 2026. Aplica restricciones. Lunes a viernes de 6 pm a 12 am.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img class="main" src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=1100&q=80&auto=format&fit=crop" alt="Orden de tacos de cabeza con cebolla, cilantro y limón" loading="lazy">
+      <img class="inset" src="https://images.unsplash.com/photo-1695088220737-9a6d901db8f1?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Caldo rojo con carne, cebolla morada y cilantro" loading="lazy">
+      <div class="about-badge"><div><strong>100%</strong><small>Sazón<br>sinaloense</small></div></div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Nuestra historia</span>
+      <h2>Un pedacito de Sinaloa <span class="r">en Zapopan</span></h2>
+      <p class="first">En La Real Cabeza de Res hacemos los tacos como se hacen en el norte: sin prisas, con carne de primera y con el sazón de casa que nos ganó el título de “el rey de la cabeza de res”.</p>
+      <p>Cocemos la cabeza de res lentamente hasta que la carne queda suave y jugosa, y la servimos en tortilla caliente con cebolla, cilantro, limón y salsas hechas aquí. De cachete y lengua a sesos, ojo o labio, cada parte tiene su secreto.</p>
+      <p>Además de nuestros tacos, encuentras caldos de cabeza, menudo, birria, vampiritos y los antojos de Don Vicente: chilorio, machaca y chorizo artesanal, como en casa.</p>
+      <div class="facts">
+        <div class="fact"><strong>11</strong><small>tipos de taco</small></div>
+        <div class="fact"><strong>7 días</strong><small>a la semana</small></div>
+        <div class="fact"><strong>16 h</strong><small>abiertos al día</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TACOS -->
+<section class="tacos on-dark" id="tacos">
+  <div class="wrap">
+    <div class="tacos-head reveal">
+      <div>
+        <span class="eyebrow">La especialidad de la casa</span>
+        <h2>Los tacos <span class="r">de La Real</span></h2>
+        <p class="lead">Escoge tu parte favorita o pide de todas para compartir. Cachete y cabeza desde $39.</p>
+      </div>
+      <a class="btn btn-ghost" href="#carta">Ver menú completo <svg><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <article class="feature reveal">
+      <div class="feature-img">
+        <img src="https://images.unsplash.com/photo-1648437595587-e6a8b0cdf1f9?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Tres tacos de carne deshebrada con limón sobre tabla de madera" loading="lazy">
+        <span class="ribbon"><img src="assets/crown-gold.png" alt="">Platillo estrella</span>
+        <div class="from"><small>Desde</small><strong>$39</strong></div>
+      </div>
+      <div class="feature-body">
+        <h3>Tacos <span>de cabeza</span></h3>
+        <p>Carne tierna y jugosa en tortilla de maíz caliente, con cebolla, cilantro, limón y salsa de la casa. Así se comen en Sinaloa.</p>
+        <ul class="plist">
+          <li><span class="n">Cabeza</span><span class="dots"></span><span class="p">$39</span></li>
+          <li><span class="n">Cachete</span><span class="dots"></span><span class="p">$39</span></li>
+          <li><span class="n">Carnaza</span><span class="dots"></span><span class="p">$45</span></li>
+          <li><span class="n">Labio</span><span class="dots"></span><span class="p">$45</span></li>
+          <li><span class="n">Sesos</span><span class="dots"></span><span class="p">$49</span></li>
+          <li><span class="n">Ojo</span><span class="dots"></span><span class="p">$49</span></li>
+          <li><span class="n">Quesitaco de cabeza</span><span class="dots"></span><span class="p">$56</span></li>
+          <li><span class="n">Lengua</span><span class="dots"></span><span class="p">$78</span></li>
+        </ul>
+        <div class="feature-cta">
+          <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer">Aparta tu mesa <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-wa" href="https://wa.me/523322452528?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20tacos" target="_blank" rel="noopener noreferrer"><svg><use href="#i-wa"/></svg>Pedir</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="recs reveal" id="recomendados">
+      <div class="recs-head">
+        <span class="crown-box"><img src="assets/crown-green.png" alt=""></span>
+        <div><h3>Recomendados</h3><p>Los favoritos de la casa. Si es tu primera vez, empieza por aquí.</p></div>
+      </div>
+      <div class="rec-grid">
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1695088224722-3e9133446c12?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Caldo rojo con carne, cebolla morada, aguacate y cilantro" loading="lazy" width="800" height="600"><span class="p">$235</span></figure>
+          <div class="rec-body"><b>La Real Suprema</b><small>Lengua y cabeza. Ahora con caldo especial de la casa.</small></div>
+        </article>
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1666307635004-3900f0bad9fa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Persona tomando un taco con limón de un plato" loading="lazy" width="800" height="600"><span class="p">$75</span></figure>
+          <div class="rec-body"><b>Vampiro de cabeza</b><small>Sin asiento $75 · con asiento $90</small></div>
+        </article>
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1585803518902-58a3ef005b51?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Tacos variados servidos junto a un tazón de caldo" loading="lazy" width="800" height="600"><span class="p">$210</span></figure>
+          <div class="rec-body"><b>Plato combinado</b><small>Papa con chilorio, chorizo con papa y bistec a la mexicana. Para 2 personas.</small></div>
+        </article>
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1676081986290-ac79c2968c3f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Mesa con platillos mexicanos en salsa verde" loading="lazy" width="800" height="600"><span class="p">$249</span></figure>
+          <div class="rec-body"><b>Lengua en salsa verde</b><small>Con salsa verde de la casa.</small></div>
+        </article>
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1780283210587-29e03acf30d9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chilaquiles con queso y cebolla en plato negro" loading="lazy" width="800" height="600"><span class="p">$185</span></figure>
+          <div class="rec-body"><b>Chilaquiles con birria</b><small>Verdes o rojos.</small></div>
+        </article>
+        <article class="rec">
+          <figure class="rec-img"><img src="https://images.unsplash.com/photo-1695088224233-69cc4f3b19cc?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Cuchara con carne en caldo rojo" loading="lazy" width="800" height="600"><span class="p">$230</span></figure>
+          <div class="rec-body"><b>Carne en su jugo</b><small>Un clásico de la casa, calientito.</small></div>
+        </article>
+      </div>
+      <p class="recs-note">Fotos ilustrativas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL MENU -->
+<section class="carta" id="carta">
+  <div class="wrap">
+    <div class="carta-frame reveal">
+      <div class="carta-top">
+        <img src="assets/logo-red.png" alt="La Real Cabeza de Res" width="1092" height="323">
+        <p>Menú completo · Precios en moneda nacional, incluyen IVA. Propina no incluida.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Categorías del menú">
+        <button class="tab" role="tab" aria-selected="true" data-tab="p-tacos">Tacos y quesadillas</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="p-caldos">Caldos, menudo y birria</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="p-antojos">Antojos de Don Vicente</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="p-extras">Extras y complementos</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="p-bebidas">Bebidas y barra</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="p-postres">Postres</button>
+      </div>
+
+      <div class="panel active" id="p-tacos" role="tabpanel">
+        <div class="group">
+          <h4>Los tacos</h4>
+          <ul class="plist">
+            <li><span class="n">Birria</span><span class="dots"></span><span class="p">$48</span></li>
+            <li><span class="n">Cabeza</span><span class="dots"></span><span class="p">$39</span></li>
+            <li><span class="n">Lengua</span><span class="dots"></span><span class="p">$78</span></li>
+            <li><span class="n">Quesitaco de cabeza</span><span class="dots"></span><span class="p">$56</span></li>
+            <li><span class="n">Chicharrón</span><span class="dots"></span><span class="p">$60</span></li>
+            <li><span class="n">Cachete</span><span class="dots"></span><span class="p">$39</span></li>
+            <li><span class="n">Sesos</span><span class="dots"></span><span class="p">$49</span></li>
+            <li><span class="n">Ojo</span><span class="dots"></span><span class="p">$49</span></li>
+            <li><span class="n">Quesabirria</span><span class="dots"></span><span class="p">$59</span></li>
+            <li><span class="n">Carnaza</span><span class="dots"></span><span class="p">$45</span></li>
+            <li><span class="n">Labio</span><span class="dots"></span><span class="p">$45</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h4>Las quesadillas</h4>
+          <ul class="plist">
+            <li><span class="n">Queso</span><span class="dots"></span><span class="p dual"><span><em>Maíz</em>$45</span><span><em>Harina</em>$49</span></span></li>
+            <li><span class="n">Cabeza</span><span class="dots"></span><span class="p">$77</span></li>
+            <li><span class="n">Lengua</span><span class="dots"></span><span class="p">$95</span></li>
+            <li><span class="n">Mixta</span><span class="dots"></span><span class="p">$95</span></li>
+            <li><span class="n">Carnaza</span><span class="dots"></span><span class="p">$75</span></li>
+            <li><span class="n">Birria</span><span class="dots"></span><span class="p">$77</span></li>
+            <li><span class="n">Chicharrón</span><span class="dots"></span><span class="p">$89</span></li>
+          </ul>
+          <h4>Los vampiritos</h4>
+          <ul class="plist">
+            <li><span class="n">Vampiro birria y asientos</span><span class="dots"></span><span class="p">$90</span></li>
+            <li><span class="n">Vampiro con queso y asientos</span><span class="dots"></span><span class="p">$75</span></li>
+            <li><span class="n"><i class="rc"></i>Vampiro cabeza sin asiento</span><span class="dots"></span><span class="p">$75</span></li>
+            <li><span class="n">Vampiro cabeza con asiento</span><span class="dots"></span><span class="p">$90</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="p-caldos" role="tabpanel">
+        <div class="group">
+          <h4>La cabeza (caldos) <small>orden</small></h4>
+          <ul class="plist">
+            <li><span class="n">Cabeza</span><span class="dots"></span><span class="p">$169</span></li>
+            <li><span class="n">Carnaza</span><span class="dots"></span><span class="p">$179</span></li>
+            <li><span class="n">La Real</span><span class="dots"></span><span class="p">$235</span></li>
+            <li><span class="n"><i class="rc"></i>La Real Suprema<small>Lengua y cabeza. Ahora con caldo especial de la casa.</small></span><span class="dots"></span><span class="p">$235</span></li>
+            <li><span class="n">Lengua</span><span class="dots"></span><span class="p">$249</span></li>
+            <li><span class="n"><i class="rc"></i>Carne en su jugo</span><span class="dots"></span><span class="p">$230</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h4>El menudo <small>orden</small></h4>
+          <p class="note">Con o sin grano</p>
+          <ul class="plist">
+            <li><span class="n">Blanco<small>Con o sin pata.</small></span><span class="dots"></span><span class="p">$180</span></li>
+            <li><span class="n">Rojo<small>Con o sin pata.</small></span><span class="dots"></span><span class="p">$180</span></li>
+          </ul>
+          <h4>La birria <small>orden</small></h4>
+          <ul class="plist">
+            <li><span class="n">De res</span><span class="dots"></span><span class="p">$199</span></li>
+          </ul>
+          <h4>Los guacamoles</h4>
+          <ul class="plist">
+            <li><span class="n">Regular</span><span class="dots"></span><span class="p">$100</span></li>
+            <li><span class="n">Con chicharrón de papada</span><span class="dots"></span><span class="p">$160</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="p-antojos" role="tabpanel">
+        <div class="group">
+          <span class="boxed">LOS ANTOJOS DE DON VICENTE</span>
+          <ul class="plist">
+            <li><span class="n">Quesadilla de chorizo c/papa</span><span class="dots"></span><span class="p">$65</span></li>
+            <li><span class="n">Quesadilla de chilorio c/papa</span><span class="dots"></span><span class="p">$55</span></li>
+            <li><span class="n">Enfrijoladas de chilorio c/papa</span><span class="dots"></span><span class="p">$120</span></li>
+            <li><span class="n">Enfrijoladas de chorizo c/papa</span><span class="dots"></span><span class="p">$120</span></li>
+            <li><span class="n"><i class="rc"></i>Lengua en salsa verde de la casa</span><span class="dots"></span><span class="p">$249</span></li>
+            <li><span class="n"><i class="rc"></i>Plato combinado<small>Papa con chilorio, chorizo con papa y bistec a la mexicana (porción de 210 gr para compartir 2 personas).</small></span><span class="dots"></span><span class="p">$210</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <span class="boxed" style="visibility:hidden" aria-hidden="true">·</span>
+          <ul class="plist">
+            <li><span class="n">Taco de frijoles puercos con queso</span><span class="dots"></span><span class="p">$30</span></li>
+            <li><span class="n">Taco de papa con chilorio</span><span class="dots"></span><span class="p">$35</span></li>
+            <li><span class="n">Taco de bistec a la mexicana</span><span class="dots"></span><span class="p">$45</span></li>
+            <li><span class="n">Taco de chorizo con papa</span><span class="dots"></span><span class="p">$35</span></li>
+            <li><span class="n"><i class="rc"></i>Chilaquiles con birria<small>Verdes o rojos.</small></span><span class="dots"></span><span class="p">$185</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="p-extras" role="tabpanel">
+        <div class="group">
+          <span class="boxed">EXTRAS</span>
+          <ul class="plist">
+            <li><span class="n">Pellizcada con asientos</span><span class="dots"></span><span class="p">$39</span></li>
+            <li><span class="n">Pellizcada con asientos con queso</span><span class="dots"></span><span class="p">$60</span></li>
+            <li><span class="n">Pellizcada con asientos, queso y cabeza</span><span class="dots"></span><span class="p">$95</span></li>
+            <li><span class="n">Consomé</span><span class="dots"></span><span class="p">$15</span></li>
+            <li><span class="n">Aguacate</span><span class="dots"></span><span class="p">$45</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <span class="boxed">COMPLEMENTOS</span>
+          <h4>Enfrijoladas</h4>
+          <ul class="plist">
+            <li><span class="n">Cabeza</span><span class="dots"></span><span class="p">$155</span></li>
+            <li><span class="n">Lengua</span><span class="dots"></span><span class="p">$185</span></li>
+            <li><span class="n">Chicharrón</span><span class="dots"></span><span class="p">$155</span></li>
+            <li><span class="n">Birria</span><span class="dots"></span><span class="p">$195</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="p-bebidas" role="tabpanel">
+        <div class="group">
+          <h4>Bebidas</h4>
+          <ul class="plist">
+            <li><span class="n">Aguas frescas</span><span class="dots"></span><span class="p dual"><span><em>16 oz</em>$45</span><span><em>32 oz</em>$79</span></span></li>
+            <li><span class="n">Refrescos</span><span class="dots"></span><span class="p">$40</span></li>
+            <li><span class="n">Jugo de naranja</span><span class="dots"></span><span class="p">$55</span></li>
+            <li><span class="n">Café americano</span><span class="dots"></span><span class="p">$45</span></li>
+            <li><span class="n">Café de la olla</span><span class="dots"></span><span class="p">$65</span></li>
+            <li><span class="n">Botella de agua<small>600 ml</small></span><span class="dots"></span><span class="p">$40</span></li>
+            <li><span class="n">Cerveza</span><span class="dots"></span><span class="p">$55</span></li>
+            <li><span class="n">Agua de naranjita</span><span class="dots"></span><span class="p">$35</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h4>La barra de La Real</h4>
+          <ul class="plist">
+            <li><span class="n">Cantaritos</span><span class="dots"></span><span class="p">$140</span></li>
+            <li><span class="n">Carajillo coco</span><span class="dots"></span><span class="p">$180</span></li>
+            <li><span class="n">Carajillo tradicional</span><span class="dots"></span><span class="p">$140</span></li>
+            <li><span class="n">Michelada</span><span class="dots"></span><span class="p">$140</span></li>
+            <li><span class="n">Shot</span><span class="dots"></span><span class="p">$59</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" id="p-postres" role="tabpanel">
+        <div class="group">
+          <h4>Dulce antojo de La Real</h4>
+          <ul class="plist">
+            <li><span class="n">Flan</span><span class="dots"></span><span class="p">$69</span></li>
+            <li><span class="n">Pastel de galleta María</span><span class="dots"></span><span class="p">$69</span></li>
+            <li><span class="n">Plátano macho con lecherita</span><span class="dots"></span><span class="p">$69</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carta-foot">
+        <span class="legend"><i class="rc"></i>Recomendado de la casa</span>
+        <p>Precios en moneda nacional, incluyen IVA. Propina no incluida.</p>
+        <a class="btn btn-red" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer">Reservar mesa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DON VICENTE ARTESANAL -->
+<section class="artesanal on-dark" id="artesanal">
+  <div class="wrap art-grid">
+    <div class="reveal">
+      <div class="seal"><div>DON<br>VICENTE<small>ARTESANAL</small></div></div>
+      <span class="eyebrow">Línea artesanal para llevar</span>
+      <h2>Llévate el sabor <span class="r">a casa</span></h2>
+      <p class="lead">Machaca, chorizo y chilorio preparados de forma artesanal con la receta de Don Vicente. Pídelos por WhatsApp y pasa por ellos.</p>
+      <div class="hero-actions">
+        <a class="btn btn-cream" href="https://wa.me/523322452528?text=Hola%2C%20quiero%20pedir%20productos%20de%20la%20l%C3%ADnea%20artesanal%20Don%20Vicente" target="_blank" rel="noopener noreferrer"><svg><use href="#i-bag"/></svg>Pedir para llevar</a>
+      </div>
+    </div>
+    <div class="products reveal">
+      <div class="product"><h4>Machaca</h4>
+        <div class="row"><span>500 gr</span><span>$430</span></div>
+        <div class="row"><span>250 gr</span><span>$220</span></div>
+        <div class="row"><span>100 gr</span><span>$95</span></div>
+      </div>
+      <div class="product"><h4>Chorizo</h4>
+        <div class="row"><span>500 gr</span><span>$95</span></div>
+        <div class="row"><span>250 gr</span><span>$55</span></div>
+      </div>
+      <div class="product"><h4>Chilorio</h4>
+        <div class="row"><span>500 gr</span><span>$160</span></div>
+        <div class="row"><span>250 gr</span><span>$85</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="porque">
+  <div class="wrap">
+    <div class="why-head reveal">
+      <span class="eyebrow">¿Por qué La Real?</span>
+      <h2>Lo que nos hace <span class="r">reyes</span></h2>
+      <p class="lead">Hacemos una cosa muy bien y la hacemos todos los días con el mismo cuidado.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><span class="why-num">01</span><div class="why-icon"><svg><use href="#i-fire"/></svg></div><h3>Receta sinaloense</h3><p>Cocción lenta y sazón del norte. Sin atajos, con el sabor que nos distingue.</p></div>
+      <div class="why-card reveal"><span class="why-num">02</span><div class="why-icon"><svg><use href="#i-leaf"/></svg></div><h3>Todo hecho en casa</h3><p>Salsas, caldos y los productos artesanales de Don Vicente, preparados aquí.</p></div>
+      <div class="why-card reveal"><span class="why-num">03</span><div class="why-icon"><svg><use href="#i-clock"/></svg></div><h3>De 8:00 am a medianoche</h3><p>Desayuno, comida, cena o antojo nocturno. Los 7 días de la semana.</p></div>
+      <div class="why-card reveal"><span class="why-num">04</span><div class="why-icon"><svg><use href="#i-family"/></svg></div><h3>Ambiente familiar</h3><p>Ven con la familia o los amigos. Atención amable, servicio rápido y precios justos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec" id="galeria">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <div>
+        <span class="eyebrow">Galería</span>
+        <h2>Se antoja <span class="r">desde aquí</span></h2>
+      </div>
+      <p class="lead" style="max-width:40ch">Un vistazo a nuestros tacos y al ambiente que te espera en Zapopan.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="g tall"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=900&q=80&auto=format&fit=crop" alt="Plato de tacos con salsa y aguacate" loading="lazy"><figcaption>Orden recién servida</figcaption></figure>
+      <figure class="g wide"><img src="https://images.unsplash.com/photo-1711306722944-70b776bb4394?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Mesa con tacos, salsas y guacamole vista desde arriba" loading="lazy"><figcaption>Para compartir</figcaption></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=700&q=80&auto=format&fit=crop" alt="Barra del restaurante con luz cálida" loading="lazy"><figcaption>La barra de La Real</figcaption></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?w=700&q=80&auto=format&fit=crop" alt="Tacos con chiles toreados" loading="lazy"><figcaption>Con sus toreados</figcaption></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80&auto=format&fit=crop" alt="Comedor del restaurante" loading="lazy"><figcaption>El comedor</figcaption></figure>
+      <figure class="g wide"><img src="https://images.unsplash.com/photo-1564767655658-4e6b365884ff?w=1200&q=80&auto=format&fit=crop" alt="Tacos con rábano y cilantro" loading="lazy"><figcaption>Cilantro, cebolla y rábano</figcaption></figure>
+      <figure class="g"><img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=700&q=80&auto=format&fit=crop" alt="Tacos con salsa roja" loading="lazy"><figcaption>Salsa de la casa</figcaption></figure>
+    </div>
+    <div class="ig-cta reveal"><a class="btn btn-outline" href="https://www.instagram.com/larealcabezaderesmx/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-ig"/></svg>Síguenos en Instagram @larealcabezaderesmx</a></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews on-dark" id="opiniones">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <div>
+        <span class="eyebrow">Opiniones</span>
+        <h2>Lo que dicen <span class="r">en Google</span></h2>
+      </div>
+      <a class="score" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Real%20Cabeza%20de%20Res%2C%20Carlos%20Dickens%2035%2C%20Jardines%20Vallarta%2C%20Zapopan" target="_blank" rel="noopener noreferrer" aria-label="Calificación 4.5 de 5 en Google, 438 opiniones. Ver en Google Maps">
+        <strong>4.5</strong>
+        <div><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star-half"/></svg></span><small>438 opiniones en Google</small><span class="score-link">Ver opiniones en Google →</span></div>
+      </a>
+    </div>
+    <div class="review-grid">
+      <article class="review reveal">
+        <span class="review-src"><svg><use href="#i-google"/></svg>Opinión en Google</span>
+        <blockquote>“Nunca había probado un lugar “especializado” en tacos y órdenes de cabeza. ¡Qué delicia de lugar! Desde que te reciben el servicio es ameno, el lugar bastante amplio y limpio. Pude probar la orden “La Real”, el vampiro de cabeza, el taco de chicharrón y una quesabirria, todo muy rico.”</blockquote>
+        <p class="review-scores">Comida 5/5 · Servicio 5/5 · Ambiente 5/5</p>
+        <div class="reviewer"><span class="avatar">IR</span><div><b>Isaac Robledo</b><small>Local Guide</small></div></div>
+      </article>
+      <article class="review reveal">
+        <span class="review-src"><svg><use href="#i-google"/></svg>Opinión en Google</span>
+        <blockquote>“Todo me encantó, excelente servicio y sabor. Me encanta la birria y la lengua, de mis favoritos; jugo de naranja recién exprimido y ambiente limpio. Tortillas hechas a mano 👏🏼”</blockquote>
+        <p class="review-scores">Comida 5/5 · Servicio 5/5</p>
+        <div class="reviewer"><span class="avatar">PP</span><div><b>Paulina Pico Figueroa</b><small>Opinión en Google</small></div></div>
+      </article>
+      <article class="review reveal">
+        <span class="review-src"><svg><use href="#i-google"/></svg>Opinión en Google</span>
+        <blockquote>“Está muy rico todo, te atienden rápido, el lugar está muy limpio y grande, ¡el consomé de cabeza está delicioso!”</blockquote>
+        <p class="review-scores">Comida 5/5 · Servicio 5/5 · Ambiente 5/5</p>
+        <div class="reviewer"><span class="avatar">NR</span><div><b>Nuria Reguero</b><small>Local Guide</small></div></div>
+      </article>
+      <article class="review reveal">
+        <span class="review-src"><svg><use href="#i-google"/></svg>Opinión en Google</span>
+        <blockquote>“Son unos excelentes tacos, gran sabor de la cabeza. El sabor del consomé es delicioso. […] Excelente servicio. Pero por supuesto que regreso.”</blockquote>
+        <p class="review-scores">Comida 5/5 · Servicio 5/5 · Ambiente 5/5</p>
+        <div class="reviewer"><span class="avatar">AG</span><div><b>Alejandro Gomez</b><small>Local Guide</small></div></div>
+      </article>
+    </div>
+    <p class="reviews-note reveal">Opiniones reales publicadas en Google por clientes de La Real Cabeza de Res. Calificación de Google al mes de noviembre de 2026.</p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visitanos">
+  <div class="wrap visit-grid">
+    <div class="reveal">
+      <span class="eyebrow">Visítanos</span>
+      <h2>Te esperamos <span class="r">en Zapopan</span></h2>
+      <p class="lead">Ven por unos tacos a cualquier hora del día. Abrimos los siete días de la semana, desde temprano hasta la medianoche.</p>
+      <div class="hours">
+        <div class="hours-row"><span>Hoy</span><span class="status" id="visitStatus"><span class="dot" id="visitDot"></span><span id="visitText">Abierto ahora</span></span></div>
+        <div class="hours-row"><span>Lunes a Domingo</span><b>8:00 am – 12:00 am</b></div>
+        <div class="hours-row"><span>Dirección</span><b>Carlos Dickens 35, Jardines Vallarta,<br>45010 Zapopan, Jal.</b></div>
+        <div class="hours-row"><span>Teléfono</span><b><a href="tel:+523322452528">+52 33 2245 2528</a></b></div>
+        <div class="hours-row"><span>Instagram</span><b><a href="https://www.instagram.com/larealcabezaderesmx/" target="_blank" rel="noopener noreferrer">@larealcabezaderesmx</a></b></div>
+      </div>
+      <div class="visit-actions">
+        <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&query=La%20Real%20Cabeza%20de%20Res%2C%20Carlos%20Dickens%2035%2C%20Jardines%20Vallarta%2C%20Zapopan" target="_blank" rel="noopener noreferrer"><svg><use href="#i-pin"/></svg>Cómo llegar</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer">Reservar mesa</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Mapa de La Real Cabeza de Res en Zapopan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Carlos%20Dickens%2035%2C%20Jardines%20Vallarta%2C%2045010%20Zapopan%2C%20Jal.&z=14&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section class="reserve on-dark" id="reservar">
+  <div class="reserve-bg"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1800&q=70&auto=format&fit=crop" alt="" loading="lazy"></div>
+  <div class="wrap reserve-grid">
+    <div class="reveal">
+      <span class="eyebrow">Reservaciones</span>
+      <h2>Aparta tu mesa <span class="r">en un minuto</span></h2>
+      <p class="lead">Reserva en línea con Google: eliges día, hora y número de personas. ¿Prefieres WhatsApp o hablar con nosotros? También puedes.</p>
+      <a class="btn btn-red btn-lg" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer"><svg><use href="#i-cal"/></svg>Reservar en línea con Google</a>
+      <div class="contact-list">
+        <a class="contact-item wa" href="https://wa.me/523322452528?text=Hola%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener noreferrer"><span class="ic"><svg><use href="#i-wa"/></svg></span><div><small>WhatsApp</small><b>Escríbenos ahora</b></div></a>
+        <a class="contact-item" href="tel:+523322452528"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><small>Llámanos</small><b>+52 33 2245 2528</b></div></a>
+        <a class="contact-item ig" href="https://www.instagram.com/larealcabezaderesmx/" target="_blank" rel="noopener noreferrer"><span class="ic"><svg><use href="#i-ig"/></svg></span><div><small>Instagram</small><b>@larealcabezaderesmx</b></div></a>
+      </div>
+    </div>
+    <form class="form reveal" id="resForm" novalidate>
+      <h3>¿Prefieres WhatsApp?</h3>
+      <p>Llena tus datos y te preparamos el mensaje de reservación para enviarlo por WhatsApp.</p>
+      <div class="fields">
+        <div class="field full"><label for="f-name">Nombre</label><input id="f-name" name="name" type="text" placeholder="¿A nombre de quién?" autocomplete="name" required></div>
+        <div class="field"><label for="f-date">Fecha</label><input id="f-date" name="date" type="date" required></div>
+        <div class="field"><label for="f-time">Hora</label><select id="f-time" name="time" required></select></div>
+        <div class="field full"><label for="f-people">Personas</label>
+          <select id="f-people" name="people">
+            <option>1 persona</option><option selected>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 personas</option><option>6 personas</option><option>7–10 personas</option><option>Más de 10 (evento)</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-notes">Comentarios <span style="text-transform:none;letter-spacing:0;font-weight:500">(opcional)</span></label><textarea id="f-notes" name="notes" placeholder="Cumpleaños, silla para bebé, pedido para llevar…"></textarea></div>
+      </div>
+      <button class="btn btn-wa" type="submit"><svg><use href="#i-wa"/></svg>Confirmar por WhatsApp</button>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite" hidden></p>
+      <p class="form-note">Sin costo · Se abre WhatsApp con tu mensaje listo · También pedidos para llevar</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/logo-cream.png" alt="La Real Cabeza de Res by Vicentillo's" width="1092" height="323">
+        <p style="max-width:36ch">Carlos Dickens 35, Jardines Vallarta, 45010 Zapopan, Jal. Abierto todos los días de 8:00 am a 12:00 am.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#nosotros">Nosotros</a><a href="#tacos">Tacos</a><a href="#carta">Menú</a><a href="#artesanal">Para llevar</a><a href="#visitanos">Ubicación</a><a href="#reservar">Reservar</a>
+      </div>
+      <div style="display:grid;gap:6px">
+        <a href="tel:+523322452528" style="color:#fff;font-weight:800">+52 33 2245 2528</a>
+        <a href="https://wa.me/523322452528" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">WhatsApp →</a>
+        <a href="https://www.instagram.com/larealcabezaderesmx/" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">Instagram →</a>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> La Real Cabeza de Res · Zapopan, Jalisco</span><span class="king">El rey de la cabeza de res</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/523322452528?text=Hola%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<nav class="mbar" aria-label="Acciones rápidas">
+  <a class="call" href="tel:+523322452528"><svg><use href="#i-phone"/></svg>Llamar</a>
+  <a class="wa" href="https://wa.me/523322452528" target="_blank" rel="noopener noreferrer"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="res" href="https://www.google.com/maps/reserve/v/dine/c/GYee5g92syI?source=pa&amp;hl=es-419" target="_blank" rel="noopener noreferrer"><svg><use href="#i-cal"/></svg>Reservar</a>
+</nav>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu: toggle, close after choosing a link, close on Escape
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const setMenu = open => {
+    mobileMenu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    nav.classList.toggle('menu-open', open);
+  };
+  menuBtn.addEventListener('click', () => setMenu(mobileMenu.hidden));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mobileMenu.hidden) { setMenu(false); menuBtn.focus(); } });
+  window.addEventListener('resize', () => { if (innerWidth > 1040) setMenu(false); });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Menu tabs
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === t.dataset.tab));
+    t.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+  }));
+
+  // Open / closed (Zapopan time, 8:00 – 24:00 daily)
+  const parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Mexico_City',hour:'2-digit',minute:'2-digit',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const g = t => parts.find(x => x.type === t).value;
+  const today = `${g('year')}-${g('month')}-${g('day')}`;
+  const open = (+g('hour'))*60 + (+g('minute')) >= 480;
+  document.getElementById('heroDot').classList.toggle('closed', !open);
+  document.getElementById('heroStatus').textContent = open ? 'Abierto ahora · hasta las 12:00 am' : 'Cerrado · abrimos a las 8:00 am';
+  document.getElementById('visitDot').classList.toggle('closed', !open);
+  document.getElementById('visitStatus').classList.toggle('closed', !open);
+  document.getElementById('visitText').textContent = open ? 'Abierto ahora' : 'Abrimos a las 8:00 am';
+
+  // Anniversary promo: show only during its dates
+  const promo = document.getElementById('aniversario');
+  if (promo) {
+    const active = today >= promo.dataset.start && today <= promo.dataset.end;
+    if (!active) { promo.remove(); document.querySelectorAll('[data-promo]').forEach(el => el.remove()); }
+    else {
+      const days = Math.round((new Date(promo.dataset.end + 'T00:00:00') - new Date(today + 'T00:00:00')) / 864e5);
+      document.getElementById('promoLeft').textContent = days === 0 ? '¡Último día de la promoción!' : `Quedan ${days + 1} días de promoción`;
+    }
+  }
+
+  // Reservation → WhatsApp
+  const dateI = document.getElementById('f-date');
+  dateI.min = today; dateI.value = today;
+  const timeS = document.getElementById('f-time');
+  const fmt = (h,m) => `${h % 12 || 12}:${String(m).padStart(2,'0')} ${h < 12 ? 'am' : 'pm'}`;
+  for (let t = 480; t <= 1410; t += 30) { const o = document.createElement('option'); o.textContent = fmt(Math.floor(t/60), t%60); if (t === 840) o.selected = true; timeS.appendChild(o); }
+
+  const resForm = document.getElementById('resForm');
+  const formMsg = document.getElementById('formMsg');
+  resForm.addEventListener('submit', e => {
+    e.preventDefault();
+    // Use form.elements: form.name is the form's own name attribute, not the "name" input
+    const el = resForm.elements;
+    const nameI = el.namedItem('name'), name = nameI.value.trim();
+    nameI.style.borderColor = ''; dateI.style.borderColor = '';
+    if (!name) { nameI.style.borderColor = 'var(--red)'; nameI.focus(); showMsg('error', 'Escribe a nombre de quién es la reservación.'); return; }
+    if (!dateI.value) { dateI.style.borderColor = 'var(--red)'; dateI.focus(); showMsg('error', 'Elige la fecha de tu visita.'); return; }
+    const d = new Date(dateI.value + 'T12:00:00');
+    const fecha = isNaN(d) ? dateI.value : d.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
+    const notes = el.namedItem('notes').value.trim();
+    let msg = `¡Hola! Quiero reservar una mesa en La Real Cabeza de Res.\n\n• Nombre: ${name}\n• Fecha: ${fecha}\n• Hora: ${el.namedItem('time').value}\n• Personas: ${el.namedItem('people').value}`;
+    if (notes) msg += `\n• Comentarios: ${notes}`;
+    const waUrl = 'https://wa.me/523322452528?text=' + encodeURIComponent(msg);
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    showMsg('ok', `Listo, ${name}: preparamos tu mensaje de reservación en WhatsApp. Tu mesa aún no está confirmada; envía el mensaje y espera nuestra respuesta. Si WhatsApp no se abrió, <a href="${waUrl}" target="_blank" rel="noopener noreferrer">ábrelo aquí</a> o llámanos al <a href="tel:+523322452528">33 2245 2528</a>.`);
+  });
+  function showMsg(type, html){ formMsg.className = 'form-msg ' + type; formMsg.innerHTML = html; formMsg.hidden = false; }
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
